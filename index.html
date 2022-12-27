@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Add BootStrap CSS File (CDN) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <!-- Add SweetAlert2 JavaScript External Library (CDN) -->
+    <link
+      href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css"
+      rel="stylesheet"
+    />
+
+    <!-- Add Our External CSS File -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Weather Map</title>
+  </head>
+  <body>
+    <!-- A Container Which hold all component of our web-site -->
+    <div class="container">
+      <!-- First Section -->
+      <!-- Deal with input box only-->
+      <div class="row weather pt-4 pb-3 my-0 mx-auto">
+        <input
+          type="search"
+          class="form-control weather_search border-0 mb-3 fs-4 py-1 px-3"
+          list="suggestion"
+          placeholder="Enter City Name"
+        />
+
+        <!-- For suggestion to user  -->
+        <datalist id="suggestion"></datalist>
+      </div>
+
+      <!-- Second Section -->
+      <!-- Deal with Today Weather or Current Weather -->
+      <div
+        class="weather_today row row-cols-lg-3 row-cols-md-2 row-cols-1 px-md-1 px-5"
+      >
+        <!-- 2nd -> First Section , handing weather details like ... humidity, wind, pressure, day ,cityName -->
+        <div class="weather_details col">
+          <h2 class="weather_city">City</h2>
+          <p class="weather_day">Day</p>
+          <div class="weather_current">
+            <p class="weather_indicator weather_indicator--humidity">
+              <span class="value">Humidity</span> %
+            </p>
+            <p class="weather_indicator weather_indicator--wind">
+              <span class="value">Wind</span> m/s
+            </p>
+            <p class="weather_indicator weather_indicator--pressure">
+              <span class="value">Pressure</span> hPa
+            </p>
+          </div>
+        </div>
+
+        <!-- 2nd -> Second Section , Handing Image of weather-->
+        <div class="col">
+          <img
+            src="./images/clear-sky.png"
+            alt="Image"
+            class="weather_image d-block mx-auto pt-5"
+          />
+        </div>
+
+        <!-- 2nd -> Third Section , Handling Temperature of a day -->
+        <div
+          class="weather_temperature col text-lg-end text-md-start text-center py-md-3 py-sm-4 py-5 py-lg-2"
+        >
+          <span class="value">Temperature</span> &deg;C
+        </div>
+      </div>
+
+      <!-- Third Section -->
+      <!-- Deal with weather forecast for 5-day -->
+      <div
+        class="row weather_forecast row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center mt-2 p-sm-0 px-5"
+      >
+        <!-- 1st-Day-Details -->
+        <div class="col px-lg-2 px-md-3 px-sm-2 px-5">
+          <div class="weather_forecast_item card text-center">
+            <div class="card-body">
+              <img
+                src="/images/few-clouds.png"
+                alt="images"
+                title="images"
+                class="weather_forecast_icon card-img img-fluid py-4"
+              />
+              <h3 class="weather_forecast_day py-2">First</h3>
+              <p class="weather_forecast_temperature">
+                <span class="value">temp</span> &deg;C
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2nd-Day-Details -->
+        <div class="col px-lg-2 px-md-3 px-sm-2 px-5">
+          <div class="weather_forecast_item card text-center">
+            <div class="card-body">
+              <img
+                src="/images/few-clouds.png"
+                alt="images"
+                title="images"
+                class="weather_forecast_icon card-img img-fluid py-4"
+              />
+              <h3 class="weather_forecast_day py-2">Second</h3>
+              <p class="weather_forecast_temperature">
+                <span class="value">temp</span> &deg;C
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3rd-Day-Details -->
+        <div class="col px-lg-2 px-md-3 px-sm-2 px-5">
+          <div class="weather_forecast_item card text-center">
+            <div class="card-body">
+              <img
+                src="/images/few-clouds.png"
+                alt="images"
+                title="images"
+                class="weather_forecast_icon card-img img-fluid py-4"
+              />
+              <h3 class="weather_forecast_day py-2">Third</h3>
+              <p class="weather_forecast_temperature">
+                <span class="value">temp</span> &deg;C
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4th-Day-Details -->
+        <div class="col px-lg-2 px-md-3 px-sm-2 px-5">
+          <div class="weather_forecast_item card text-center">
+            <div class="card-body">
+              <img
+                src="/images/few-clouds.png"
+                alt="images"
+                title="images"
+                class="weather_forecast_icon card-img img-fluid py-4"
+              />
+              <h3 class="weather_forecast_day py-2">Fourth</h3>
+              <p class="weather_forecast_temperature">
+                <span class="value">temp</span> &deg;C
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5th-Day-Details -->
+        <div class="col px-lg-2 px-md-3 px-sm-2 px-5">
+          <div class="weather_forecast_item card text-center">
+            <div class="card-body">
+              <img
+                src="/images/few-clouds.png"
+                alt="images"
+                title="images"
+                class="weather_forecast_icon card-img img-fluid py-4"
+              />
+              <h3 class="weather_forecast_day py-2">Fifth</h3>
+              <p class="weather_forecast_temperature">
+                <span class="value">temp</span> &deg;C
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add JavaScript BootStrap File (CDN) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Add SweetAlert2 External JavaScript File -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+    <!-- Add Our External JavaScript File -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>

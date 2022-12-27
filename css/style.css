@@ -1,0 +1,104 @@
+/* Use Google Font in Css File */
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
+
+/* CSS Reset */
+body {
+  width: 100%;
+  /* auto means browser have to decide  || there is reverse inheritance */
+  height: auto;
+  margin: 0;
+  /* we use radial-gradient 
+  we have to use minimun two colors
+  in radial gradient we pass 3 arguments
+  first argument is optional
+  if we not pass first argument the CSS automatically  pass ellipse 
+  color-one in middle 
+  color-two in top and bottom*/
+  background-image: radial-gradient(
+    circle,
+    rgba(5, 8, 114, 1),
+    rgba(7, 3, 53, 1)
+  );
+  color: #defaf9;
+  font-family: "Gowun Dodum", sans-serif;
+  font-size: 22px;
+}
+
+/* Styling Weather Div in which whole components are exist */
+.weather {
+  height: 100%;
+}
+
+/* Styling Search Text Box */
+.weather_search {
+  background-color: rgba(225, 255, 255, 0.15);
+  color: inherit;
+}
+
+/* change color of placeholder persent inside Search Text Box */
+input::placeholder {
+  color: #fff;
+}
+
+/* Resize today  weather image */
+.weather_image {
+  width: 210px;
+}
+
+/* style weather city */
+.weather_city {
+  font-size: 36px;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+/* style weather Day */
+.weather_day {
+  font-size: 30px;
+  margin: 10px 0;
+  font-weight: 400;
+}
+
+/* when we want to add something with the help of CSS in our HTML-tags  and do not make any change in out HTML*/
+/* we use pseudo class before  */
+/* and with this pseudo class we also use content property */
+.weather_indicator::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  margin-right: 10px;
+}
+
+/* adding icon of humidity */
+.weather_indicator--humidity::before {
+  background-image: url(../images/humidity.png);
+}
+
+/* adding icon of wind */
+.weather_indicator--wind::before {
+  background-image: url(../images/wind.png);
+}
+
+/* adding icon of pressure */
+.weather_indicator--pressure::before {
+  background-image: url(../images/pressure.png);
+}
+
+/* styling Temperature */
+.weather_temperature {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* resize weather forecast icons */
+.weather_forecast_icon {
+  max-width: 50%;
+}
+
+/* Give card shape to article of Weather forecast class div */
+.weather_forecast_item {
+  background-color: rgba(255, 255, 255, 0.2);
+}
